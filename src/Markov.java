@@ -1,3 +1,10 @@
+/*-----------------
+Title: Markov
+Abstract: This program reads a text file and generates a series words and words that follow those words
+Author: Tomas Diaz-Wahl
+Date: 2023-02-25
+--------------------*/
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -8,9 +15,9 @@ import java.util.Scanner;
 import static java.lang.System.exit;
 
 public class Markov {
-    private static final boolean DEBUG = true;
-    private static final String PUNCTUATION_MARKS = " $";
-    private static final String ENDS_IN_PUNCTUATION = ".?!$";
+    private static final boolean DEBUG = false;
+    private static final String PUNCTUATION_MARKS = ".!?$";
+    private static final String ENDS_IN_PUNCTUATION = "__$";
     private String prevWord;
     private HashMap <String, ArrayList<String>> words = new HashMap<String, ArrayList<String>>();
 
@@ -21,12 +28,17 @@ public class Markov {
     }
 
     static boolean endsWithPunctuation (String word){
+        boolean test;
+        int lastIndex = word.length() - 1;
+        String lastChar = word.substring(lastIndex);
+        String punctuation = "[" + PUNCTUATION_MARKS +"]";
         try {
-            boolean test = word.endsWith(ENDS_IN_PUNCTUATION);
+            test = lastChar.matches(punctuation);
         } catch (Exception e) {
             System.out.println("Unknown error in endsWithPunctuation");
         }
-        return word.endsWith(ENDS_IN_PUNCTUATION);
+        test = lastChar.matches(punctuation);
+        return test;
     }
 
     //methods
@@ -52,7 +64,6 @@ public class Markov {
             holdLine = readFile.nextLine();
             addLine(holdLine);
         }
-
     }
 
     void addLine(String untrimmedLine){
@@ -69,25 +80,27 @@ public class Markov {
             for (String word: words){
                 addWord(word);
             }
-
         }
-
     }
 
     void addWord(String currentWord) {
         ArrayList<String> tempList;
         if (endsWithPunctuation(prevWord)){
             tempList = words.get(ENDS_IN_PUNCTUATION);
-            tempList.add(currentWord);//reference into hashmap value for key
+            tempList.add(currentWord);
+            words.put(ENDS_IN_PUNCTUATION, tempList);
         }
         else if (words.containsKey(prevWord)){
             tempList = words.get(prevWord);
             tempList.add(currentWord);
+            words.put(prevWord, tempList);
         }
         else{
             tempList = new ArrayList<String>();
-            words.put(currentWord, tempList);
+            tempList.add(currentWord);
+            words.put(prevWord, tempList);
         }
+        prevWord = currentWord;
     }
 
     String randomWord (String word){
@@ -105,7 +118,7 @@ public class Markov {
             exit(-1);
         }
         index = pickWord.nextInt(tempList.size());
-        return tempList.get(index);
+        return tempList.get(index); // return variable instead
     }
 
     public String getSentence (){
@@ -114,7 +127,7 @@ public class Markov {
         currentWord = randomWord(ENDS_IN_PUNCTUATION);
         while (!endsWithPunctuation(currentWord)){
             sentence = sentence + currentWord + " ";
-            currentWord = randomWord(ENDS_IN_PUNCTUATION);
+            currentWord = randomWord(currentWord);
         }
         sentence = sentence + currentWord;
         return sentence;
@@ -124,12 +137,9 @@ public class Markov {
         return words;
     }
 
-    @Override
     public String toString() {
-        return "Markov{" +
-                "words=" + words +
-                '}';
+        String tempString = words.toString();
+        return tempString;
     }
-
-
 }
+// ----- End of program
