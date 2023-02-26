@@ -5,12 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1a3a5b08-34ef-4553-b41b-ed2b39efa46c" name="Changes" comment="working branch">
-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MarkovTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/helloThere.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Markov Project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Markov Project.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Markov.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Markov.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/helloThere.txt" beforeDir="false" afterPath="$PROJECT_DIR$/helloThere.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,13 +60,14 @@
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DAC_MarkovTest.getSentence">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Markov Project" />
@@ -118,10 +116,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.DAC_MarkovTest.getSentence" />
         <item itemvalue="JUnit.DAC_MarkovTest.getWords" />
         <item itemvalue="JUnit.DAC_MarkovTest.constructor_test" />
-        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.DAC_MarkovTest" />
       </list>
     </recent_temporary>
@@ -149,7 +147,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677191101945</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="working branch">
+      <created>1677219632006</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1677219632006</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -167,5 +172,16 @@
     <MESSAGE value="First commit" />
     <MESSAGE value="working branch" />
     <option name="LAST_COMMIT_MESSAGE" value="working branch" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Main.java</url>
+          <line>2</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
