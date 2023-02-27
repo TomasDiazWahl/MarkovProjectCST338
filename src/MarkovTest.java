@@ -1,3 +1,10 @@
+/*-----------------
+Title: Markov
+Abstract: This program tests and validates each of the methods in Markov.java
+Author: Tomas Diaz-Wahl
+Date: 2023-02-25
+--------------------*/
+
 import org.junit.jupiter.api.*;
 
 import java.io.BufferedWriter;

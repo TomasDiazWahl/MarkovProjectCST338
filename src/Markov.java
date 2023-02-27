@@ -27,6 +27,8 @@ public class Markov {
         this.prevWord = ENDS_IN_PUNCTUATION;
     }
 
+    // endsWithPunctuation takes a string, converts it to a regular expression and
+    // checks to see if it ends with punctuation
     static boolean endsWithPunctuation (String word){
         boolean test;
         int lastIndex = word.length() - 1;
@@ -41,7 +43,7 @@ public class Markov {
         return test;
     }
 
-    //methods
+    //addFromFile takes in the filename as a string and attempts to open and parse the file
     public void addFromFile (String filename){
         String holdLine;
         //open file
@@ -66,6 +68,8 @@ public class Markov {
         }
     }
 
+    // addLine takes in an untrimmed line and removes whitespace and check to make sure the
+    // line is not empty
     void addLine(String untrimmedLine){
         String trimmedLine = untrimmedLine.trim();
         String[] words;
@@ -83,6 +87,8 @@ public class Markov {
         }
     }
 
+    // addWord checks the previous word to decide which key in the hashmap the current word should be stored
+    // under. If no key exists the current word is added as a key
     void addWord(String currentWord) {
         ArrayList<String> tempList;
         if (endsWithPunctuation(prevWord)){
@@ -103,6 +109,7 @@ public class Markov {
         prevWord = currentWord;
     }
 
+    // randomWord selects a random word from the HashMap whose key is the passed in String
     String randomWord (String word){
         ArrayList<String> tempList;
         Random pickWord = new Random();
@@ -121,6 +128,8 @@ public class Markov {
         return tempList.get(index); // return variable instead
     }
 
+    // getSentence constructs a sentence using the HashMap key value pair logic
+    // to randomly select words in the sentence
     public String getSentence (){
         String currentWord;
         String sentence = "";
@@ -133,11 +142,12 @@ public class Markov {
         return sentence;
     }
 
+    // getWords returns the HashMap words
     HashMap<String, ArrayList<String>> getWords (){
         return words;
     }
 
-    public String toString() {
+    // toString is the toString method for Markov.java    public String toString() {
         String tempString = words.toString();
         return tempString;
     }

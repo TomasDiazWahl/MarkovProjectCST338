@@ -1,3 +1,10 @@
+/*-----------------
+Title: Markov
+Abstract: This program is the main for Markov.java and runs 10 tests of the markov text generation from the test file.
+Author: Tomas Diaz-Wahl
+Date: 2023-02-25
+--------------------*/
+
 public class Main {
     public static void printMarkovTests (String filename){
         Markov markov = new Markov();
