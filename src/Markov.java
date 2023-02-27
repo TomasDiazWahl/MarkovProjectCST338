@@ -147,7 +147,8 @@ public class Markov {
         return words;
     }
 
-    // toString is the toString method for Markov.java    public String toString() {
+    // toString is the toString method for Markov.java
+    public String toString() {
         String tempString = words.toString();
         return tempString;
     }
